@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Specify the target file
-target_file="workspace/server/apps/settings/appinfo/Routes.php"
+target_file="/var/www/html/apps/settings/appinfo/Routes.php"
 
 # Comment out the specified lines
 sed -i '/AppSettings#listCategories/ s/^/\/\/ /' "$target_file"
