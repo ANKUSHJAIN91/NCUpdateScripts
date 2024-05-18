@@ -27,5 +27,5 @@ target_file_2="/var/www/html/lib/private/NavigationManager.php"
 
 # Comment out the entire if condition
 sed -i '/if ($this->config->getSystemValueBool('\"knowledgebaseenabled'\", true)) {/,/);/ s/^/\/\/ /;}' "$target_file_2"
-sed -i '/\[\'type\' => \'settings\'\]/,/\];/ s/^/\/\/ /' "$target_file_2"
+sed -i "/\[\'type\' => \'settings\'\]/,/\];/ s/^/\/\/ /" "$target_file_2"
 echo "Lines of NavigationManager.php commented out successfully!"
