@@ -20,4 +20,12 @@ sed -i '/AppSettings#force/ { s/^/\/\/ /; t; }' "$target_file"
 sed -i '/Help#help/ { s/^/\/\/ /; t; }' "$target_file"
 sed -i '/Reasons#getPdf/ { s/^/\/\/ /; t; }' "$target_file"
 
-echo "Lines commented out successfully!"
+echo "Lines of routes.php commented out successfully!"
+
+
+target_file_2="/var/www/html/lib/private/NavigationManager.php"
+
+# Comment out the entire if condition
+sed -i '/if ($this->config->getSystemValueBool('\''knowledgebaseenabled'\'', true)) {/,/);/ s/^/\/\/ /' "$target_file"
+sed -i '/\[\'type\' => \'settings\'\]/,/\];/ s/^/\/\/ /' "$target_file"
+echo "Lines of NavigationManager.php commented out successfully!"
