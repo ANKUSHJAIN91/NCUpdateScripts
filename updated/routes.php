@@ -99,10 +99,25 @@ return [
                 ['name' => 'DeclarativeSettings#setValue', 'url' => '/settings/api/declarative/value', 'verb' => 'POST', 'root' => ''],
                 ['name' => 'DeclarativeSettings#getForms', 'url' => '/settings/api/declarative/forms', 'verb' => 'GET', 'root' => ''],
         ],
-        // Restrict access for "richdocuments" section
-        foreach ($routes as &$route) { // Use reference to modify the array
-            if (isset($route['defaults']['section']) && $route['defaults']['section'] === 'richdocuments') {
-                throw new Exception('Access to "richdocuments" section is denied.');
-            }
+        // Find the route with name 'PersonalSettings#index'
+        $personalSettingsRouteIndex = array_search(
+            [
+                'name' => 'PersonalSettings#index',
+                'url' => '/settings/user/{section}',
+                'verb' => 'GET',
+            ],
+            $routes, // Assuming $routes holds your route definitions
+            TRUE // Use strict comparison
+        );
+        
+        if ($personalSettingsRouteIndex !== false) {
+            // Modify the route to block "richdocuments" access
+            $routes[$personalSettingsRouteIndex]['defaults']['section'] = function ($section) {
+                if ($section === 'richdocuments') {
+                    // Implement your blocking mechanism here (e.g., throw an exception)
+                    throw new Exception('Access to "richdocuments" section is denied.');
+                }
+                return $section; // Allow other sections
+            };
         }
 ];
