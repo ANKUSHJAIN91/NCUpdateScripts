@@ -7,7 +7,7 @@ FILES=("updated/routes.php"
       "updated/NavigationManager.php" 
       "updated/development.notice.php"
       "updated/overview.php"
-      "additional-mail.php"
+      "updated/additional-mail.php"
       )  # Array of file paths in the repository
 TARGET_DIRS=("/var/www/html/apps/settings/appinfo/" 
             "/var/www/html/lib/private/" 
