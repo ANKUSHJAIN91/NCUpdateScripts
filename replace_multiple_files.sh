@@ -18,13 +18,13 @@ TARGET_DIRS=("/var/www/html/apps/settings/appinfo/"
 # Arrays for directories and files to be removed
 REMOVE_DIRS=("/var/www/html/apps/firstrunwizard" )  # Directories to remove
 REMOVE_FILES=(
-              # "/var/www/html/dist/federatedfilesharing-vue-settings-personal.js" 
-              # "/var/www/html/dist/federatedfilesharing-vue-settings-personal.js.map"
-              # "/var/www/html/dist/federatedfilesharing-vue-settings-admin.js"
-              # "/var/www/html/dist/federatedfilesharing-vue-settings-admin.js.map"
-              # "/var/www/html/dist/updatenotification-updatenotification.js.map"
-              # "/var/www/html/dist/updatenotification-updatenotification.js"
-              # "/var/www/html/dist/updatenotification-updatenotification.js.LICENSE.txt"
+              "/var/www/html/dist/federatedfilesharing-vue-settings-personal.js" 
+              "/var/www/html/dist/federatedfilesharing-vue-settings-personal.js.map"
+              "/var/www/html/dist/federatedfilesharing-vue-settings-admin.js"
+              "/var/www/html/dist/federatedfilesharing-vue-settings-admin.js.map"
+              "/var/www/html/dist/updatenotification-updatenotification.js.map"
+              "/var/www/html/dist/updatenotification-updatenotification.js"
+              "/var/www/html/dist/updatenotification-updatenotification.js.LICENSE.txt"
               # "/var/www/html/dist/settings-vue-settings-admin-basic-settings.js.map"
               )  # Files to remove
 
@@ -57,45 +57,45 @@ download_and_replace() {
   fi
 }
 
-# # Function to remove directories
-# remove_directories() {
-#   for dir in "${REMOVE_DIRS[@]}"; do
-#     if [ -d "$dir" ]; then
-#       echo "Removing directory: $dir"
-#       rm -rf "$dir"
-#       if [ $? -eq 0 ]; then
-#         echo "Directory successfully removed: $dir"
-#       else
-#         echo "Failed to remove directory: $dir"
-#         exit 1
-#       fi
-#     else
-#       echo "Directory does not exist: $dir"
-#     fi
-#   done
-# }
+# Function to remove directories
+remove_directories() {
+  for dir in "${REMOVE_DIRS[@]}"; do
+    if [ -d "$dir" ]; then
+      echo "Removing directory: $dir"
+      rm -rf "$dir"
+      if [ $? -eq 0 ]; then
+        echo "Directory successfully removed: $dir"
+      else
+        echo "Failed to remove directory: $dir"
+        exit 1
+      fi
+    else
+      echo "Directory does not exist: $dir"
+    fi
+  done
+}
 
-# # Function to remove files
-# remove_files() {
-#   for file in "${REMOVE_FILES[@]}"; do
-#     if [ -f "$file" ]; then
-#       echo "Removing file: $file"
-#       rm -f "$file"
-#       if [ $? -eq 0 ]; then
-#         echo "File successfully removed: $file"
-#       else
-#         echo "Failed to remove file: $file"
-#         exit 1
-#       fi
-#     else
-#       echo "File does not exist: $file"
-#     fi
-#   done
-# }
+# Function to remove files
+remove_files() {
+  for file in "${REMOVE_FILES[@]}"; do
+    if [ -f "$file" ]; then
+      echo "Removing file: $file"
+      rm -f "$file"
+      if [ $? -eq 0 ]; then
+        echo "File successfully removed: $file"
+      else
+        echo "Failed to remove file: $file"
+        exit 1
+      fi
+    else
+      echo "File does not exist: $file"
+    fi
+  done
+}
 
-# # Remove specified directories and files
-# remove_directories
-# remove_files
+# Remove specified directories and files
+remove_directories
+remove_files
 
 # Iterate over the arrays and download each file to its corresponding target directory
 for i in "${!FILES[@]}"; do
