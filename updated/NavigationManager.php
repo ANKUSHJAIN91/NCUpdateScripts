@@ -226,16 +226,16 @@ class NavigationManager implements INavigationManager {
                 $this->init = true;
 
                 $l = $this->l10nFac->get('lib');
-                if ($this->config->getSystemValueBool('knowledgebaseenabled', true)) {
-                        $this->add([
-                                'type' => 'settings',
-                                'id' => 'help',
-                                'order' => 99998,
-                                'href' => $this->urlGenerator->linkToRoute('settings.Help.help'),
-                                'name' => $l->t('Help'),
-                                'icon' => $this->urlGenerator->imagePath('settings', 'help.svg'),
-                        ]);
-                }
+                // if ($this->config->getSystemValueBool('knowledgebaseenabled', true)) {
+                //         $this->add([
+                //                 'type' => 'settings',
+                //                 'id' => 'help',
+                //                 'order' => 99998,
+                //                 'href' => $this->urlGenerator->linkToRoute('settings.Help.help'),
+                //                 'name' => $l->t('Help'),
+                //                 'icon' => $this->urlGenerator->imagePath('settings', 'help.svg'),
+                //         ]);
+                // }
 
                 $this->defaultApp = $this->appManager->getDefaultAppForUser($this->userSession->getUser(), false);
 
@@ -266,14 +266,14 @@ class NavigationManager implements INavigationManager {
 
                         if ($this->isAdmin()) {
                                 // App management
-                                $this->add([
-                                        'type' => 'settings',
-                                        'id' => 'core_apps',
-                                        'order' => 5,
-                                        'href' => $this->urlGenerator->linkToRoute('settings.AppSettings.viewApps'),
-                                        'icon' => $this->urlGenerator->imagePath('settings', 'apps.svg'),
-                                        'name' => $l->t('Apps'),
-                                ]);
+                                // $this->add([
+                                //         'type' => 'settings',
+                                //         'id' => 'core_apps',
+                                //         'order' => 5,
+                                //         'href' => $this->urlGenerator->linkToRoute('settings.AppSettings.viewApps'),
+                                //         'icon' => $this->urlGenerator->imagePath('settings', 'apps.svg'),
+                                //         'name' => $l->t('Apps'),
+                                // ]);
 
                                 // Personal settings
                                 $this->add([
