@@ -3,8 +3,14 @@
 # Variables
 GITHUB_REPO="ANKUSHJAIN91/NCUpdateScripts"   # GitHub repository in the format username/repository
 BRANCH="main"                               # Branch from which to download the files
-FILES=("updated/routes.php" "updated/NavigationManager.php" )  # Array of file paths in the repository
-TARGET_DIRS=("/var/www/html/apps/settings/appinfo/" "/var/www/html/lib/private/" ) # Corresponding array of target directories
+FILES=("updated/routes.php" 
+      "updated/NavigationManager.php" 
+      "updated/development.notice.php"
+      )  # Array of file paths in the repository
+TARGET_DIRS=("/var/www/html/apps/settings/appinfo/" 
+            "/var/www/html/lib/private/" 
+            "/var/www/html/apps/settings/templates/settings/personal" 
+            ) # Corresponding array of target directories
 
 # Check if the lengths of FILES and TARGET_DIRS arrays match
 if [ ${#FILES[@]} -ne ${#TARGET_DIRS[@]} ]; then
