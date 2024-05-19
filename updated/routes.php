@@ -99,4 +99,10 @@ return [
                 ['name' => 'DeclarativeSettings#setValue', 'url' => '/settings/api/declarative/value', 'verb' => 'POST', 'root' => ''],
                 ['name' => 'DeclarativeSettings#getForms', 'url' => '/settings/api/declarative/forms', 'verb' => 'GET', 'root' => ''],
         ],
+        // Restrict access for "richdocuments" section
+        foreach ($routes as &$route) { // Use reference to modify the array
+            if (isset($route['defaults']['section']) && $route['defaults']['section'] === 'richdocuments') {
+                throw new Exception('Access to "richdocuments" section is denied.');
+            }
+        }
 ];
