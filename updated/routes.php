@@ -67,7 +67,19 @@ return [
                 ['name' => 'CheckSetup#check', 'url' => '/settings/ajax/checksetup', 'verb' => 'GET' , 'root' => ''],
                 ['name' => 'CheckSetup#getFailedIntegrityCheckFiles', 'url' => '/settings/integrity/failed', 'verb' => 'GET' , 'root' => ''],
                 ['name' => 'CheckSetup#rescanFailedIntegrityCheck', 'url' => '/settings/integrity/rescan', 'verb' => 'GET' , 'root' => ''],
-                ['name' => 'PersonalSettings#index', 'url' => '/settings/user/{section}', 'verb' => 'GET', 'defaults' => ['section' => 'personal-info'] , 'root' => ''],
+                // ['name' => 'PersonalSettings#index', 'url' => '/settings/user/{section}', 'verb' => 'GET', 'defaults' => ['section' => 'personal-info'] , 'root' => ''],
+                [        'name' => 'PersonalSettings#index', 
+                         'url' => '/settings/user/{section}', 
+                         'verb' => 'GET', 
+                         'defaults' => ['section' => 'personal-info'] ,
+                         'root' => '',
+                         'handler' => function($section) {
+                             if ($section === 'richdocuments') {
+                                 return response('Access to this section is blocked.', 403);
+                             }
+                             return app(\App\Http\Controllers\PersonalSettingsController::class)->index($section);
+                          }
+                ],
                 ['name' => 'AdminSettings#index', 'url' => '/settings/admin/{section}', 'verb' => 'GET', 'defaults' => ['section' => 'server'] , 'root' => ''],
                 ['name' => 'AdminSettings#form', 'url' => '/settings/admin/{section}', 'verb' => 'GET' , 'root' => ''],
                 ['name' => 'ChangePassword#changePersonalPassword', 'url' => '/settings/personal/changepassword', 'verb' => 'POST' , 'root' => ''],
