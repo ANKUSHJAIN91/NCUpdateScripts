@@ -68,17 +68,7 @@ return [
                 ['name' => 'CheckSetup#getFailedIntegrityCheckFiles', 'url' => '/settings/integrity/failed', 'verb' => 'GET' , 'root' => ''],
                 ['name' => 'CheckSetup#rescanFailedIntegrityCheck', 'url' => '/settings/integrity/rescan', 'verb' => 'GET' , 'root' => ''],
                 // ['name' => 'PersonalSettings#index', 'url' => '/settings/user/{section}', 'verb' => 'GET', 'defaults' => ['section' => 'personal-info'] , 'root' => ''],
-                ['name' => 'PersonalSettings#index',  'url' => '/settings/user/{section}', 
-                         'verb' => 'GET', 
-                         'defaults' => ['section' => 'personal-info'] ,
-                         'root' => '',
-                         'handler' => function($section) {
-                             if ($section === 'richdocuments') {
-                                 return response('Access to this section is blocked.', 403);
-                             }
-                             return app(\App\Http\Controllers\PersonalSettingsController::class)->index($section);
-                          }
-                ],
+                ['name' => 'PersonalSettings#index', 'url' => '/settings/user/{section}', 'verb' => 'GET', 'defaults' => ['section' => 'personal-info'], 'root' => '', 'condition' => '{section} != \'richdocuments\''],
                 ['name' => 'AdminSettings#index', 'url' => '/settings/admin/{section}', 'verb' => 'GET', 'defaults' => ['section' => 'server'] , 'root' => ''],
                 ['name' => 'AdminSettings#form', 'url' => '/settings/admin/{section}', 'verb' => 'GET' , 'root' => ''],
                 ['name' => 'ChangePassword#changePersonalPassword', 'url' => '/settings/personal/changepassword', 'verb' => 'POST' , 'root' => ''],
@@ -99,25 +89,4 @@ return [
                 ['name' => 'DeclarativeSettings#setValue', 'url' => '/settings/api/declarative/value', 'verb' => 'POST', 'root' => ''],
                 ['name' => 'DeclarativeSettings#getForms', 'url' => '/settings/api/declarative/forms', 'verb' => 'GET', 'root' => ''],
         ],
-        // Find the route with name 'PersonalSettings#index'
-        $personalSettingsRouteIndex = array_search(
-            [
-                'name' => 'PersonalSettings#index',
-                'url' => '/settings/user/{section}',
-                'verb' => 'GET',
-            ],
-            $routes, // Assuming $routes holds your route definitions
-            TRUE // Use strict comparison
-        );
-        
-        if ($personalSettingsRouteIndex !== false) {
-            // Modify the route to block "richdocuments" access
-            $routes[$personalSettingsRouteIndex]['defaults']['section'] = function ($section) {
-                if ($section === 'richdocuments') {
-                    // Implement your blocking mechanism here (e.g., throw an exception)
-                    throw new Exception('Access to "richdocuments" section is denied.');
-                }
-                return $section; // Allow other sections
-            };
-        }
 ];
