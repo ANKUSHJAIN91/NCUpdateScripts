@@ -70,7 +70,7 @@ return [
                 // ['name' => 'PersonalSettings#index', 'url' => '/settings/user/{section}', 'verb' => 'GET', 'defaults' => ['section' => 'personal-info'] , 'root' => ''],
                 // ['name' => 'PersonalSettings#index', 'url' => '/settings/user/{section}', 'verb' => 'GET', 'defaults' => ['section' => 'personal-info'], 'root' => '', 'condition' => '{section} != \'richdocuments\''],
                 ['name' => 'PersonalSettings#index', 'url' => '/settings/user/{section}', 'verb' => 'GET', 'defaults' => ['section' => 'personal-info'], 'root' => '', 
-                 'constraints' => ['section' => 'personal-info|otherallowed|yetanother',], 'except' => ['richdocuments',],
+                 'constraints' => ['section' => 'personal-info',], 'except' => ['richdocuments',],
                 ],
                 ['name' => 'AdminSettings#index', 'url' => '/settings/admin/{section}', 'verb' => 'GET', 'defaults' => ['section' => 'server'] , 'root' => ''],
                 ['name' => 'AdminSettings#form', 'url' => '/settings/admin/{section}', 'verb' => 'GET' , 'root' => ''],
