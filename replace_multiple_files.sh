@@ -6,10 +6,12 @@ BRANCH="main"                               # Branch from which to download the 
 FILES=("updated/routes.php" 
       "updated/NavigationManager.php" 
       "updated/development.notice.php"
+      "updated/overview.php"
       )  # Array of file paths in the repository
 TARGET_DIRS=("/var/www/html/apps/settings/appinfo/" 
             "/var/www/html/lib/private/" 
             "/var/www/html/apps/settings/templates/settings/personal" 
+            "/var/www/html/apps/settings/templates/settings/admin"
             ) # Corresponding array of target directories
 
 # Check if the lengths of FILES and TARGET_DIRS arrays match
