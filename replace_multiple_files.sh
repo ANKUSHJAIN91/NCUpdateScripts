@@ -27,7 +27,7 @@ REMOVE_FILES=(
               "/var/www/html/dist/updatenotification-updatenotification.js.LICENSE.txt"
               # "/var/www/html/dist/settings-vue-settings-admin-basic-settings.js.map"
               )  # Files to remove
-
+SKELETON_DIR="/var/www/html/core/skeleton"  # Directory to clear
 # Check if the lengths of FILES and TARGET_DIRS arrays match
 if [ ${#FILES[@]} -ne ${#TARGET_DIRS[@]} ]; then
   echo "Error: The number of files and target directories do not match."
@@ -92,10 +92,32 @@ remove_files() {
     fi
   done
 }
-
+# Function to clear all files and folders in the specified directory
+clear_skeleton_directory() {
+  local dir=$1
+  if [ -d "$dir" ]; then
+    echo "Clearing directory: $dir"
+    rm -rf "${dir:?}"/*  # The :? ensures that the directory is not empty and avoids rm -rf /
+    if [ $? -eq 0 ]; then
+      echo "Directory successfully cleared: $dir"
+    else
+      echo "Failed to clear directory: $dir"
+      exit 1
+    fi
+  else
+    echo "Directory does not exist: $dir"
+  fi
+}
+# Check for required tools
+if ! command -v curl &> /dev/null; then
+  echo "Error: curl is not installed."
+  exit 1
+fi
 # Remove specified directories and files
 remove_directories
 remove_files
+# Clear the skeleton directory
+clear_skeleton_directory "$SKELETON_DIR"
 
 # Iterate over the arrays and download each file to its corresponding target directory
 for i in "${!FILES[@]}"; do
