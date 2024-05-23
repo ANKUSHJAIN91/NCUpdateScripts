@@ -20,8 +20,8 @@ REMOVE_DIRS=("/var/www/html/apps/firstrunwizard" )  # Directories to remove
 REMOVE_FILES=(
               "/var/www/html/dist/federatedfilesharing-vue-settings-personal.js" 
               "/var/www/html/dist/federatedfilesharing-vue-settings-personal.js.map"
-              "/var/www/html/dist/federatedfilesharing-vue-settings-admin.js"
-              "/var/www/html/dist/federatedfilesharing-vue-settings-admin.js.map"
+              #"/var/www/html/dist/federatedfilesharing-vue-settings-admin.js"
+              #"/var/www/html/dist/federatedfilesharing-vue-settings-admin.js.map"
               "/var/www/html/dist/updatenotification-updatenotification.js.map"
               "/var/www/html/dist/updatenotification-updatenotification.js"
               "/var/www/html/dist/updatenotification-updatenotification.js.LICENSE.txt"
