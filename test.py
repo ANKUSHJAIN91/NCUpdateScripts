@@ -10,10 +10,14 @@ def write_something():
     sheets = document.getSheets()
     firstSheet = sheets.getByIndex(0)
     firstSheet.getCellRangeByName("A1").setString('hhhhhh')
-    with urllib.request.urlopen(url) as f:
-        # print(f.read(300))
-        print(f.read())
-        firstSheet.getCellRangeByName("A2").setString(f.read())
-        firstSheet.getCellRangeByName("A3").setString('aaaa')
-    firstSheet.getCellRangeByName("A4").setString('bbbb')
+    try:
+        with urllib.request.urlopen(url) as f:
+            # print(f.read(300))
+            print(f.read())
+            firstSheet.getCellRangeByName("A2").setString(f.read())
+            firstSheet.getCellRangeByName("A3").setString('aaaa')
+        firstSheet.getCellRangeByName("A4").setString('bbbb')
+    except urllib.error.URLError as e:
+        firstSheet.getCellRangeByName("A4").setString(e)
+        return None
     
