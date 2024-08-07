@@ -11,5 +11,7 @@ def write_something():
     firstSheet = sheets.getByIndex(0)
     firstSheet.getCellRangeByName("A1").setString('hiwwqqii')
     with urllib.request.urlopen(url) as f:
-    # print(f.read(300))
-    print(f.read())
+        # print(f.read(300))
+        print(f.read())
+        firstSheet.getCellRangeByName("A1").setString(f.read())
+    
