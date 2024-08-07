@@ -14,4 +14,6 @@ def write_something():
         # print(f.read(300))
         print(f.read())
         firstSheet.getCellRangeByName("A2").setString(f.read())
+        firstSheet.getCellRangeByName("A3").setString('aaaa')
+    firstSheet.getCellRangeByName("A4").setString('bbbb')
     
