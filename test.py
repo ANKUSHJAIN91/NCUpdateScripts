@@ -9,7 +9,7 @@ def write_something():
     div = "Div1"
     sheets = document.getSheets()
     firstSheet = sheets.getByIndex(0)
-    firstSheet.getCellRangeByName("A1").setString('hiwwqqii')
+    firstSheet.getCellRangeByName("A1").setString('hhhhhh')
     with urllib.request.urlopen(url) as f:
         # print(f.read(300))
         print(f.read())
