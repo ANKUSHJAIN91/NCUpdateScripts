@@ -13,5 +13,5 @@ def write_something():
     with urllib.request.urlopen(url) as f:
         # print(f.read(300))
         print(f.read())
-        firstSheet.getCellRangeByName("A1").setString(f.read())
+        firstSheet.getCellRangeByName("A2").setString(f.read())
     
