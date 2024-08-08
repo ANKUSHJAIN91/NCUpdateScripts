@@ -10,6 +10,7 @@ def write_something():
     firstSheet = sheets.getByIndex(0)
     firstSheet.getCellRangeByName("A1").setString('hhhhhh')
     firstSheet.getCellRangeByName("A4").setString('rrrrr')
+    firstSheet.getCellRangeByName("A5").setString(urllib.request.urlopen(url))
     print(urllib.request.urlopen(url))
     try:
         with urllib.request.urlopen(url) as f:
