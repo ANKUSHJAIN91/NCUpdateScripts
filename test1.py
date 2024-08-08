@@ -1,4 +1,4 @@
-import uno
+# import uno
 import urllib.request
 from urllib.parse import urlencode
 from urllib.request import urlopen
