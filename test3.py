@@ -3,7 +3,7 @@ import urllib.request
 # document = XSCRIPTCONTEXT.getDocument()
 url = 'https://n8n.jcityoffice.com/webhook/78aaa2aa-bd89-44ad-bc59-9ba8db3e7d00?Div=Div1&month=April'
 
-# print(urllib.request.urlopen(url))
+print(urllib.request.urlopen(url))
 
 def write_something():
     month = "APRIL"
@@ -26,3 +26,4 @@ def write_something():
         print(e)
         return None
     
+ write_something()
