@@ -27,4 +27,4 @@ def write_something():
         print(e)
         return None
     
- write_something()
+write_something()
