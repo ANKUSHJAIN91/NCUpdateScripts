@@ -337,4 +337,8 @@
         <force desc="When enabled, all requests are redirected to WASM." type="bool" default="false"></force>
     </wasm>
 
+    <locked_commands>
+        <command>.uno:MergeCells</command>
+    </locked_commands>
+
 </config>
