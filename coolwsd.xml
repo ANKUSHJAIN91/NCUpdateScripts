@@ -306,7 +306,7 @@
     </remote_font_config>
 
     <home_mode>
-        <enable desc="Enable more configuration options for home users" type="bool" default="false">true</enable>
+        <enable desc="Enable more configuration options for home users" type="bool" default="false">false</enable>
     </home_mode>
 
     <fonts_missing>
