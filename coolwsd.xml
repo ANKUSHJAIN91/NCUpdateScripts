@@ -382,5 +382,7 @@
         <enable desc="Enable document signing" type="bool" default="true">true</enable>
     </document_signing>
     
+    <locked_commands>uno:ClearContents</locked_commands>
+
     <restricted_commands>.uno:ClearContents</restricted_commands>
 </config>
