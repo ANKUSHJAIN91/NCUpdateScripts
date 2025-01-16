@@ -382,9 +382,5 @@
         <enable desc="Enable document signing" type="bool" default="true">true</enable>
     </document_signing>
     
-    <restricted_commands>
-      <command>uno:Save</command>
-      <command>uno:Print</command>
-    </restricted_commands>
 
 </config>
