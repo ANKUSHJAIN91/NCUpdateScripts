@@ -388,4 +388,5 @@
         <locked_commands>.uno:Bold</locked_commands>
         <is_lock_readonly>false</is_lock_readonly> 
     </feature_lock>
+    <restricted_commands>.uno:Italic</restricted_commands>
 </config>
