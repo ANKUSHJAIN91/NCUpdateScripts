@@ -381,13 +381,11 @@
     <document_signing desc="Document signing settings">
         <enable desc="Enable document signing" type="bool" default="true">true</enable>
     </document_signing>
-    
-    <locked_hosts allow="false">
-        <fallback read_only="false" disabled_commands="false"/> 
-    </locked_hosts>
-    <locked_commands> 
-        com.sun.star.text.TextDocument.InsertImage
-        com.sun.star.drawing.XShape.InsertImage 
-    </locked_commands>
-    <is_lock_readonly>false</is_lock_readonly> 
+    <feature_lock>
+        <locked_hosts allow="false">
+            <fallback read_only="false" disabled_commands="false"/> 
+        </locked_hosts>
+        <locked_commands>.uno:Bold</locked_commands>
+        <is_lock_readonly>false</is_lock_readonly> 
+    </feature_lock>
 </config>
