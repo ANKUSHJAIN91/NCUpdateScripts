@@ -382,8 +382,8 @@
         <enable desc="Enable document signing" type="bool" default="true">true</enable>
     </document_signing>
     <feature_lock>
-        <locked_hosts allow="false">
-            <fallback read_only="false" disabled_commands="false"/> 
+        <locked_hosts allow="true">
+            <fallback read_only="false" disabled_commands="true"/> 
         </locked_hosts>
         <locked_commands>.uno:Bold</locked_commands>
         <is_lock_readonly>false</is_lock_readonly> 
