@@ -362,7 +362,8 @@
 
     <locked_hosts desc="Allow/deny feature-locked hosts. When allowed, the below host specification overrides the CheckFileInfo response." allow="true">
         <fallback desc="What to do if the given host is not covered by any rule in locked_hosts" read_only="true" disabled_commands="true"/>
-        <host desc="Regex pattern of hostname to set as full-featured or locked." read_only="false" disabled_commands="false">localhost</host>
+        <host desc="Regex pattern of hostname to set as full-featured or locked." read_only="false" disabled_commands="true">https://jcityoffice.com</host>
+        <host desc="Regex pattern of hostname to set as full-featured or locked." read_only="false" disabled_commands="true">https://collab.jcityoffice.com</host>
         <host desc="Regex pattern of hostname to set as full-featured or locked." read_only="false" disabled_commands="false">10\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}</host>
         <host desc="Regex pattern of hostname to set as full-featured or locked." read_only="false" disabled_commands="false">172\\.3[01]\\.[0-9]{1,3}\\.[0-9]{1,3}</host>
     </locked_hosts>
