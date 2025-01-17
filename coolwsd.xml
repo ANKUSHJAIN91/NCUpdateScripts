@@ -359,7 +359,14 @@
         <enable desc="Home users can enable this setting, which in turn disables welcome screen and user feedback popups, but also limits concurrent open connections to 20 and concurrent open documents to 10. The default means that number of concurrent open connections and concurrent open documents are unlimited, but welcome screen and user feedback cannot be switched off." type="bool" default="false">false</enable>
     </home_mode>
 
-
+    <feature_lock>
+        <locked_hosts allow="true">
+            <fallback read_only="false" disabled_commands="true"/> 
+        </locked_hosts>
+        <locked_commands>.uno:Bold</locked_commands>
+        <is_lock_readonly>false</is_lock_readonly> 
+    </feature_lock>
+    <restricted_commands>.uno:Italic</restricted_commands>
 
 
 
@@ -381,12 +388,5 @@
     <document_signing desc="Document signing settings">
         <enable desc="Enable document signing" type="bool" default="true">true</enable>
     </document_signing>
-    <feature_lock>
-        <locked_hosts allow="true">
-            <fallback read_only="false" disabled_commands="true"/> 
-        </locked_hosts>
-        <locked_commands>.uno:Bold</locked_commands>
-        <is_lock_readonly>false</is_lock_readonly> 
-    </feature_lock>
-    <restricted_commands>.uno:Italic</restricted_commands>
+
 </config>
