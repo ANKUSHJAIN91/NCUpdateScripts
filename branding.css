@@ -3166,6 +3166,7 @@ html:not([data-theme=dark]) #toolbar-down .unobutton.over * {
 
 /** Notebook bar */
 #toolbar-wrapper.hasnotebookbar {
+  display:none !important;
   border-collapse: initial;
   border-radius: 5px;
   margin: 0 10px;
@@ -3175,6 +3176,7 @@ html:not([data-theme=dark]) #toolbar-down .unobutton.over * {
   border-color: transparent;
 }
 [data-theme=dark] #toolbar-wrapper.hasnotebookbar {
+  display:none !important;
   box-shadow: 0 2px 1px black;
 }
 #toolbar-wrapper.hasnotebookbar.spreadsheet {
