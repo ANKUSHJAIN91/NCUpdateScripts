@@ -359,18 +359,18 @@
         <enable desc="Home users can enable this setting, which in turn disables welcome screen and user feedback popups, but also limits concurrent open connections to 20 and concurrent open documents to 10. The default means that number of concurrent open connections and concurrent open documents are unlimited, but welcome screen and user feedback cannot be switched off." type="bool" default="false">false</enable>
     </home_mode>
 
-    <feature_lock desc=\"Feature lock settings\">
-        <locked_hosts desc=\"Allow/deny feature-locked hosts. When allowed, the below host specification overrides the CheckFileInfo response.\" allow=\"true\">
-            <fallback desc=\"What to do if the given host is not covered by any rule in locked_hosts\" read_only=\"true\" disabled_commands=\"true\"/>
-            <host desc=\"Regex pattern of hostname to set as full-featured or locked.\" read_only=\"false\" disabled_commands=\"false\">localhost</host>
-            <host desc=\"Regex pattern of hostname to set as full-featured or locked.\" read_only=\"false\" disabled_commands=\"false\">10\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}</host>
-            <host desc=\"Regex pattern of hostname to set as full-featured or locked.\" read_only=\"false\" disabled_commands=\"false\">172\\.3[01]\\.[0-9]{1,3}\\.[0-9]{1,3}</host>
-        </locked_hosts>
-        <is_lock_readonly desc=\"Give locked users read only access to the documents. If this is set to true it will make all the locked_host readonly who has disabled_commands set to true\" type=\"bool\" default=\"false\">false</is_lock_readonly>
-        <locked_commands desc=\"List of commands to lock the functionality\" default=\"$LOCKED_COMMANDS\">.uno:Bold</locked_commands>
-        <unlock_title desc=\"Title to show user when prompting the unlock popup\" default=\"$UNLOCK_TITLE\">CITY</unlock_title>
-        <unlock_description desc=\"Description about unlocking features\" default=\"$UNLOCK_DESCRIPTION\">CITY</unlock_description>
-    </feature_lock>
+
+    <locked_hosts desc=\"Allow/deny feature-locked hosts. When allowed, the below host specification overrides the CheckFileInfo response.\" allow=\"true\">
+        <fallback desc=\"What to do if the given host is not covered by any rule in locked_hosts\" read_only=\"true\" disabled_commands=\"true\"/>
+        <host desc=\"Regex pattern of hostname to set as full-featured or locked.\" read_only=\"false\" disabled_commands=\"false\">localhost</host>
+        <host desc=\"Regex pattern of hostname to set as full-featured or locked.\" read_only=\"false\" disabled_commands=\"false\">10\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}</host>
+        <host desc=\"Regex pattern of hostname to set as full-featured or locked.\" read_only=\"false\" disabled_commands=\"false\">172\\.3[01]\\.[0-9]{1,3}\\.[0-9]{1,3}</host>
+    </locked_hosts>
+    <is_lock_readonly desc=\"Give locked users read only access to the documents. If this is set to true it will make all the locked_host readonly who has disabled_commands set to true\" type=\"bool\" default=\"false\">false</is_lock_readonly>
+    <locked_commands desc=\"List of commands to lock the functionality\" default=\"$LOCKED_COMMANDS\">.uno:Bold</locked_commands>
+    <unlock_title desc=\"Title to show user when prompting the unlock popup\" default=\"$UNLOCK_TITLE\">CITY</unlock_title>
+    <unlock_description desc=\"Description about unlocking features\" default=\"$UNLOCK_DESCRIPTION\">CITY</unlock_description>
+
     <restricted_commands>.uno:Italic</restricted_commands>
 
 
