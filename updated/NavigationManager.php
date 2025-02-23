@@ -266,14 +266,14 @@ class NavigationManager implements INavigationManager {
 
                         if ($this->isAdmin()) {
                                 // App management
-                                // $this->add([
-                                //         'type' => 'settings',
-                                //         'id' => 'core_apps',
-                                //         'order' => 5,
-                                //         'href' => $this->urlGenerator->linkToRoute('settings.AppSettings.viewApps'),
-                                //         'icon' => $this->urlGenerator->imagePath('settings', 'apps.svg'),
-                                //         'name' => $l->t('Apps'),
-                                // ]);
+                                $this->add([
+                                        'type' => 'settings',
+                                        'id' => 'core_apps',
+                                        'order' => 5,
+                                        'href' => $this->urlGenerator->linkToRoute('settings.AppSettings.viewApps'),
+                                        'icon' => $this->urlGenerator->imagePath('settings', 'apps.svg'),
+                                        'name' => $l->t('Apps'),
+                                ]);
 
                                 // Personal settings
                                 $this->add([
@@ -296,14 +296,14 @@ class NavigationManager implements INavigationManager {
                                 ]);
                         } else {
                                 // Personal settings
-                                $this->add([
-                                        'type' => 'settings',
-                                        'id' => 'settings',
-                                        'order' => 3,
-                                        'href' => $this->urlGenerator->linkToRoute('settings.PersonalSettings.index'),
-                                        'name' => $l->t('Settings'),
-                                        'icon' => $this->urlGenerator->imagePath('settings', 'admin.svg'),
-                                ]);
+                                // $this->add([
+                                //         'type' => 'settings',
+                                //         'id' => 'settings',
+                                //         'order' => 3,
+                                //         'href' => $this->urlGenerator->linkToRoute('settings.PersonalSettings.index'),
+                                //         'name' => $l->t('Settings'),
+                                //         'icon' => $this->urlGenerator->imagePath('settings', 'admin.svg'),
+                                // ]);
                         }
 
                         $logoutUrl = \OC_User::getLogoutUrl($this->urlGenerator);
