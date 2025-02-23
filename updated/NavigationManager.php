@@ -254,14 +254,14 @@ class NavigationManager implements INavigationManager {
 
                         // Accessibility settings
                         if ($this->appManager->isEnabledForUser('theming', $this->userSession->getUser())) {
-                                $this->add([
-                                        'type' => 'settings',
-                                        'id' => 'accessibility_settings',
-                                        'order' => 2,
-                                        'href' => $this->urlGenerator->linkToRoute('settings.PersonalSettings.index', ['section' => 'theming']),
-                                        'name' => $l->t('Appearance and accessibility'),
-                                        'icon' => $this->urlGenerator->imagePath('theming', 'accessibility-dark.svg'),
-                                ]);
+                                // $this->add([
+                                //         'type' => 'settings',
+                                //         'id' => 'accessibility_settings',
+                                //         'order' => 2,
+                                //         'href' => $this->urlGenerator->linkToRoute('settings.PersonalSettings.index', ['section' => 'theming']),
+                                //         'name' => $l->t('Appearance and accessibility'),
+                                //         'icon' => $this->urlGenerator->imagePath('theming', 'accessibility-dark.svg'),
+                                // ]);
                         }
 
                         if ($this->isAdmin()) {
